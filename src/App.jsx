@@ -95,7 +95,6 @@ export default class Draggable extends React.Component {
       this.setState({list});
       onMove && onMove(list)
     }
-    
   }
   render() {
     let {option:{offsetX, offsetY, width, height}, list} = this.state,

@@ -6,7 +6,7 @@
 
 ## 解决什么问题?
   - 来源于运营同学的需求;
-  - 在用[antd](https://github.com/ant-design/ant-design)的select组件时, mode:multiple时, 选择的tag不能排序; 有时需要对数据执行调整顺序时, 需要删掉数据,然后在添加数据;
+  - 在用[antd](https://github.com/ant-design/ant-design)的select组件时, mode:multiple时, 选中的tag不能排序; 有时需要对选中数据执行调整顺序时, 需要删掉数据,然后在添加数据;
 
 ## 提供的功能
 
