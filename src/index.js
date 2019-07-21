@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Draggable from './App' 
+import Draggable from './App';
+import "./index.css"
 
 const list = [{
   id: 1,
@@ -22,4 +23,4 @@ const list = [{
   name: '测试7'
 }];
 
-ReactDOM.render(<Draggable list={list}/>, document.getElementById('root'))
+ReactDOM.render(<Draggable list={list} className="tabs"/>, document.getElementById('root'))

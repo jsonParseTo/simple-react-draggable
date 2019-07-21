@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './App.css';
 
 const defaultOption = {
   width: 50, // 每一个移动项默认width height
@@ -98,14 +98,19 @@ export default class Draggable extends React.Component {
     
   }
   render() {
-    let {option:{offsetX, offsetY, width, height}, itemClassName, list} = this.state,
-        cls = "draggable-item",
+    let {option:{offsetX, offsetY, width, height}, list} = this.state,
+        {itemClassName, className} = this.props,
+        itemCls = "draggable-item",
+        cls= "wrapper",
         items = [];
-    if(!!itemClassName){ // 每一个子项的item
-      cls = `${cls} ${itemClassName}`;
-    }
     if(!list || list.length === 0){
-      return <div></div>;
+      return <div>list为空</div>;
+    }
+    if(!!itemClassName){ // 每一个子项的item
+      itemCls = `${itemCls} ${itemClassName}`;
+    }
+    if (!!className){
+      cls = `${cls} ${className}`
     }
     list.forEach((item,index) => {
       items.push(
@@ -113,14 +118,14 @@ export default class Draggable extends React.Component {
           onDragStart = {(event) => this.onDragStart(event, index)}
           draggable
           style={{marginTop: offsetY, marginLeft: offsetX, width, height, lineHeight: height+'px'}}
-          className={cls}
+          className={itemCls}
         >
           {item.name}
         </div>
       );
     })
     
-    return <div className="wrapper">
+    return <div className={cls}>
       <div 
         className="draggable-container"
         ref="draggableContainer"
