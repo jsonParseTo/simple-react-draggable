@@ -1,9 +1,16 @@
 # simple-react-draggable
+
 简单的可拖拽的react组件, 不依赖任何第三方的库
 
 ## example(demo)
 <p align="center">
-  <img src="draggable.gif" alt="Logo"/>
+  <img src="img/draggable.gif" alt="draggable"/>
+</p>
+
+## 结合antd Select折中的支持排序方案(理想的情况重构Select组件)
+
+<p align="center">
+  <img src="img/project.gif" alt="project"/>
 </p>
 
 ## 解决什么问题?
