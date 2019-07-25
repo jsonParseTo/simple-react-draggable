@@ -1,23 +1,24 @@
-# simple-react-draggable
+### simple-react-draggable
 
 简单的可拖拽的react组件, 不依赖任何第三方的库
 
-## example(demo)
+### example(demo)
 <p align="center">
   <img src="img/draggable.gif" alt="draggable"/>
 </p>
 
-## 结合antd Select折中的支持排序方案(理想的情况重构Select组件)
+##### 结合antd Select折中的支持排序方案(理想的情况重构Select组件)
 
 <p align="center">
   <img src="img/project.gif" alt="project"/>
 </p>
 
-## 解决什么问题?
+##### 解决什么问题?
+
   - 来源于运营同学的需求;
   - 在用[antd](https://github.com/ant-design/ant-design)的select组件时, mode:multiple时, 选中的tag不能排序; 有时需要对选中数据执行调整顺序时, 需要删掉数据,然后在添加数据;
 
-## Usage
+### Usage
 
   npm/cnpm i simple-react-draggable
 
@@ -56,7 +57,7 @@
     <Draggable list={list}/>
   ```
 
-## 参数说明
+##### 参数说明
 
 > 配置:
 
@@ -114,8 +115,7 @@
 
       
 
-
-## 实现的思路
+##### 实现的思路
 
  - 总的思路: 
    找到要移动的数据的index和目标位置的元素的index, but how?
