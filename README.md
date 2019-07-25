@@ -23,7 +23,7 @@
   npm/cnpm i simple-react-draggable
 
   - Props
-  
+
 | Attribute    | Description     | Type        | Accepted Values    | Default |
 | ------------ | ------------    | ----------  | ------------------ | ------- |
 | list         |   data          | Array       | [{id,name}]        |   []    |
