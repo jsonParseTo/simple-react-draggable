@@ -23,13 +23,13 @@
   npm/cnpm i simple-react-draggable
 
   - Props
-| Attribute | Description  | Type    | Accepted Values    | Default |
-| --------- | ------------ | ------- | ------------------ | ------- |
-| list      |   data       | Array   | [{id,name}]        | []      |
-| option    |   config     | {}      | {width,height,offsetX,offsetY} | {width:30,height:20,offsetX:3,offsetY:3}|
-| className | container style | css string | any           | ''     |
-| itemClassName| each item style | css string | any        | ''     |
-| onMove    | listener     | function |     callback       |        |
+| Attribute    | Description     | Type        | Accepted Values    | Default |
+| ------------ | ------------    | ----------  | ------------------ | ------- |
+| list         |   data          | Array       | [{id,name}]        |   []    |
+| option       |   config        | {}          |                    |         |
+| className    | container style | css string  | any                |         |
+| itemClassName| each item style | css string  | any                |         |
+| onMove       | listener        | function    |     callback       |         |
 
   - example
   ```js
