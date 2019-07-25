@@ -133,7 +133,7 @@
     }
     ```
 
-    4. 计算目标位置的list元素的index
+    4). 计算目标位置的list元素的index
     ```js
     calculateTargetIndex(target){// 获取目标元素的index
         let { list, option: {width, height, offsetX, offsetY} } = this.state,
