@@ -2,7 +2,9 @@
 简单的可拖拽的react组件, 不依赖任何第三方的库
 
 ## example(demo)
-[example](./draggable.gif)
+<p align="center">
+  <img src="draggable.gif" alt="Logo"/>
+</p>
 
 ## 解决什么问题?
   - 来源于运营同学的需求;
