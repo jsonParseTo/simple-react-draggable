@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index2.css';
+import './index.css';
 
 const defaultOption = {
   width: 50, // 每一个移动项默认width height

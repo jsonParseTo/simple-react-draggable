@@ -17,15 +17,54 @@
   - 来源于运营同学的需求;
   - 在用[antd](https://github.com/ant-design/ant-design)的select组件时, mode:multiple时, 选中的tag不能排序; 有时需要对选中数据执行调整顺序时, 需要删掉数据,然后在添加数据;
 
-## 提供的功能
+## Usage
+
+  npm/cnpm i simple-react-draggable
+
+  - Props
+| Attribute | Description  | Type    | Accepted Values    | Default |
+| --------- | ------------ | ------- | ------------------ | ------- |
+| list      |   data       | Array   | [{id,name}]        | []      |
+| option    |   config     | {}      | {width,height,offsetX,offsetY} | {width:30,height:20,offsetX:3,offsetY:3}|
+| className | container style | css string | any           | ''     |
+| itemClassName| each item style | css string | any        | ''     |
+| onMove    | listener     | function |     callback       |        |
+
+  - example
+  ```js
+    import Draggable from 'simple-react-draggable';
+    const list = [{
+      id: 1,
+      name: '测试1'
+    },{
+      id: 2,
+      name: '测试2'
+    },{
+      id: 3,
+      name: '测试3'
+    },{
+      id: 4,
+      name: '测试4'
+    },{
+      id: 5,
+      name: '测试6'
+    },{
+      id: 7,
+      name: '测试7'
+    }];
+
+    <Draggable list={list}/>
+  ```
+
+## 参数说明
 
 > 配置:
 
   - option: (可选)
-    - offsetX: 每一个item的左右间隔距离
-    - offsetY: 每一个item的上下间隔距离
-    - width:   每一个item的宽度
-    - height:  每一个item的高度
+    - offsetX: item的左右间隔距离
+    - offsetY: item的上下间隔距离
+    - width:   item的宽度
+    - height:  item的高度
     - defaultOption: 
     ```js
         const defaultOption = {
@@ -35,42 +74,54 @@
             offsetY: 3
         };
     ```
-  - itemClassName
-    - 每一个item的样式
+
+  - itemClassName: (可选)
+    - 移动项的className
+    - 移动项默认的样式
     ```css
         .draggable-item {
-            background: #f3f3f3;
-            border-radius: 4px;
-            overflow: hidden;
-            cursor: default;
-            font-size: 12px;
-            color: rgba(0,0,0,0.65);
-            text-align: center;
+          background: #f3f3f3;
+          border-radius: 4px;
+          overflow: hidden;
+          cursor: default;
+          font-size: 12px;
+          color: rgba(0,0,0,0.65);
+          text-align: center;
         }
     ```
-  - className: 
-    - container元素的样式
+
+  - className: (可选)
+    - 容器的样式
+    - 容器的样式
     ```css
     .wrapper {
-        background: #fff;
-        border-radius: 4px;
-        border: 1px solid #d9d9d9;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid #d9d9d9;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
     }
     ```
+
   - list: 需要排序的数据
-    - typeof: [{}]
+    - type: [{id,name}]
 
   - onMove: 把移动后的数据返回
+    - type:  callback
+
+    - return: [{id, name}]
+
+      
+
+
 ## 实现的思路
 
  - 总的思路: 
    找到要移动的数据的index和目标位置的元素的index, but how?
-    
+
    1. 每一个item元素bind onDragStart监听事件; 并记录每个元素的index(代码为position); 这一步获取移动数据的index
-  
+
    ```js
     list.forEach((item,index) => {
       items.push(
@@ -84,7 +135,7 @@
         </div>
       );
     })
-
+   
     // onDragStart 记录index
      event.dataTransfer.setData("position", position);
    ```
@@ -107,8 +158,8 @@
    ```
 
    3. 在React计算元素的物理位置
-   
-   1). 计算拖拽容器的x,y,以及每一行能显示多少移动元素
+
+   1).计算拖拽容器的x,y,以及每一行能显示多少移动元素
    ```js
     calculateDragContainer(){
         let { option: {offsetX, width} } = this.state;
@@ -164,4 +215,4 @@
         return targetIndex;
     }
     ```
-    
+
