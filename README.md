@@ -2,7 +2,7 @@
 简单的可拖拽的react组件, 不依赖任何第三方的库
 
 ## example(demo)
-[example](./draggable.gif)
+[example](https://github.com/marspal/simple-react-draggable/blob/master/draggable.gif)
 
 ## 解决什么问题?
   - 来源于运营同学的需求;
